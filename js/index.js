@@ -5,10 +5,21 @@ const phoneEl = document.querySelector("#phone-number");
 const analyticsEl = document.querySelector("#analytics");
 const resultEl = document.querySelector("#result");
 const resultTextEl = document.querySelector("#result-text");
+const timeEl = document.querySelector("#time");
 
-console.log(phoneEl, analyticsEl, resultEl, resultTextEl);
+console.log(phoneEl, analyticsEl, resultEl, resultTextEl, timeEl);
 
-phoneEl.value = "0988883456";
+// phoneEl.value = "0988883456";
+
+function getTime() {
+    let date = new Date();
+    timeEl.innerText = `${date.getFullYear()}-${date.getMonth() + 1}\
+    -${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+
+    setTimeout(getTime, 1000);
+
+}
+
 
 function analytics() {
     let phoneNumber = phoneEl.value;
